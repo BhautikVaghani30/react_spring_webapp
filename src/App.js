@@ -19,7 +19,9 @@ const App = () => {
       <ToastContainer />
     
     <div>
-      <Navbar/>
+      <div className='mb-5'>
+        <Navbar/>
+      </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

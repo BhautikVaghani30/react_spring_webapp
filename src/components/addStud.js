@@ -27,7 +27,7 @@ function AddStud() {
   return (
     <>
       <div className="container my-4">
-        <h1 className="text-center" >Ragister Student</h1>
+        <h1 className="text-center mt-4" >Ragister Student</h1>
         <form onSubmit={handleForm}>
         <div className="form-group ">
             <label>Student _Id</label>

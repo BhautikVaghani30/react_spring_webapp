@@ -1,11 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Typed from 'typed.js';
 
 function Navbar() {
+
+  const el = React.useRef(null);
+
+    React.useEffect(() => {
+      const typed = new Typed(el.current, {
+        strings: ['StudentAdmin', 'StudentAdmin', 'StudentAdmin', 'StudentAdmin', 'StudentAdmin'],
+        typeSpeed: 50,
+      });
+  
+      return () => {
+        // Destroy Typed instance during cleanup to stop animation
+        typed.destroy();
+      };
+    }, []);
+
+
   return (
     <>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-  <Link className="navbar-brand" to="#">StudentAdmin</Link>
+        <nav className="mb-5 navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <Link className="navbar-brand" to="#"> <span ref={el} /></Link>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>

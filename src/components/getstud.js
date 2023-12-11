@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import 'react-toastify/dist/ReactToastify.css';
 import Card from './card'
 import base_url from './api';
+import Typed from 'typed.js';
 
 // `${base_url}/student/`
 function Getstud() {
@@ -40,11 +41,25 @@ function Getstud() {
     const removeStudById=(id)=>{
       setStud(stud.filter((c)=>c.id!=id));
     }
+
+    const el = React.useRef(null);
+
+    React.useEffect(() => {
+      const typed = new Typed(el.current, {
+        strings: ['Welcome to Our App', 'This is CRUD App'],
+        typeSpeed: 50,
+      });
+  
+      return () => {
+        // Destroy Typed instance during cleanup to stop animation
+        typed.destroy();
+      };
+    }, []);
     
     return (
-        <div className='container' >
-            <div className="jumbotron">
-                <h1 className="display-4">View All Students </h1>
+        <div className='container ' >
+            <div className="jumbotron con">
+                <h1 className="display-4"><span ref={el} /></h1>
                 <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
                 <hr className="my-4" />
                 <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>

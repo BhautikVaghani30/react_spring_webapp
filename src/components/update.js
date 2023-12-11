@@ -51,23 +51,11 @@ function Update() {
 
     return (
         <>
-        <div className="container my-4">
-          <h1 className="text-center" >Student</h1>
+        <div className="container mt-65">
+          <h1 className="text-center" >Student Edit</h1>
           <form onSubmit={handleForm}>
-          {/* <div className="form-group ">
-              <label>Student _Id</label>
-              <input
-                type="text"
-                className="form-control"
-                id="_id"
-                aria-describedby="emailHelp"
-                placeholder="_id"
-                value={stud.id}
-                onChange={(e)=>{
-                  setstud({...stud,id:e.target.value});
-              }}
-              />
-            </div> */}
+         
+         
             <div className="form-group ">
               <label>Student Name</label>
               <input
